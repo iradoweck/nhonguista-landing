@@ -5,9 +5,11 @@
 
 ### ✨ Adicionado
 - **Dogmatização de Agentes**: Injeção das regras de IA (AGENTS.md) e limites de contexto (.geminiignore).
+- **Licenciamento**: Adoção integral da licença de código aberto Apache License 2.0.
 
 ### 🔄 Alterado
 - **Workspaces & Integração**: Integração nativa com pacotes locais usando `workspace:*` (incluindo `moz-utils` e pacotes internos).
+- **Documentação**: Atualização do `README.md` com secção explícita para licenciamento sob Apache License 2.0.
 
 ## [0.0.1] - 13 Mai 2026
 > **Foco:** Experiência "Viva" (UX/UI), Localização e Estatísticas.
