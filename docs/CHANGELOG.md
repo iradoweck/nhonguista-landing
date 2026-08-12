@@ -4,6 +4,7 @@
 > **Foco:** Integração de Workspaces e Governança de IA.
 
 ### ✨ Adicionado
+- **Comunidade & Governança**: Adição de ficheiros CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md, VERSIONING.md e templates do GitHub.
 - **Dogmatização de Agentes**: Injeção das regras de IA (AGENTS.md) e limites de contexto (.geminiignore).
 - **Licenciamento**: Adoção integral da licença de código aberto Apache License 2.0.
 
