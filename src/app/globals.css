@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Nhonguista Brand Colors */
+  --color-primary: #0066dc;
+  --color-primary-light: #0080ff;
+  --color-primary-dark: #0052be;
+  
+  --color-accent: #fd4300;
+  --color-accent-light: #ff7b00;
+  --color-accent-dark: #c23300;
 }
 
 @media (prefers-color-scheme: dark) {
