@@ -5,6 +5,7 @@ import Link from 'next/link';
 import * as Icons from 'lucide-react';
 import { motion } from 'framer-motion';
 import { apiFetch } from '@/lib/api';
+import { Container } from '@nhonguista/ui';
 
 interface Category {
     id: string;
@@ -59,7 +60,7 @@ export function Categories() {
 
     if (loading) {
         return (
-            <section className="px-6 py-24 max-w-6xl mx-auto w-full">
+            <Container as="section" className="py-24">
                 <div className="flex items-center justify-between mb-12">
                     <div className="h-10 w-48 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
                     <div className="h-6 w-24 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
@@ -69,12 +70,12 @@ export function Categories() {
                         <div key={i} className="h-40 bg-zinc-100 dark:bg-zinc-800/50 rounded-3xl"></div>
                     ))}
                 </div>
-            </section>
+            </Container>
         );
     }
 
     return (
-        <section className="px-6 py-24 max-w-6xl mx-auto w-full">
+        <Container as="section" className="py-24">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
                 <div>
                     <h2 className="text-4xl font-black text-zinc-900 dark:text-white tracking-tight mb-2">Explorar Categorias</h2>
@@ -121,6 +122,6 @@ export function Categories() {
                     );
                 })}
             </motion.div>
-        </section>
+        </Container>
     );
 }

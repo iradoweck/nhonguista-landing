@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Star, MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { apiFetch } from '@/lib/api';
+import { Container, Avatar, AvatarFallback, AvatarImage } from '@nhonguista/ui';
 
 interface Service {
     id: string;
@@ -87,7 +88,7 @@ export function FeaturedServices() {
     if (loading) {
         return (
             <section className="px-6 py-24 bg-zinc-50/50 dark:bg-zinc-950">
-                <div className="max-w-6xl mx-auto w-full">
+                <Container>
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
                         <div className="space-y-3">
                             <div className="h-10 w-64 bg-zinc-200 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
@@ -99,7 +100,7 @@ export function FeaturedServices() {
                             <div key={i} className="h-[420px] bg-zinc-100 dark:bg-zinc-900 rounded-3xl"></div>
                         ))}
                     </div>
-                </div>
+                </Container>
             </section>
         );
     }
@@ -111,7 +112,7 @@ export function FeaturedServices() {
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full pointer-events-none blur-3xl"></div>
             
-            <div className="max-w-6xl mx-auto w-full relative z-10">
+            <Container className="relative z-10">
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
                     <div>
                         <h2 className="text-4xl font-black text-zinc-900 dark:text-white tracking-tight mb-2">Profissionais em Destaque</h2>
@@ -157,15 +158,12 @@ export function FeaturedServices() {
 
                                 <div className="p-6 sm:p-8 flex flex-col flex-1 relative bg-white dark:bg-zinc-900">
                                     <div className="flex items-center gap-3 mb-4 -mt-12 relative z-10">
-                                        <div className="w-14 h-14 rounded-2xl bg-zinc-100 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 overflow-hidden shadow-md">
-                                            {service.user.avatar ? (
-                                                <img src={service.user.avatar} alt={service.user.name} className="w-full h-full object-cover" />
-                                            ) : (
-                                                <div className="w-full h-full flex items-center justify-center text-lg font-black text-primary bg-primary/10">
-                                                    {service.user.name.charAt(0)}
-                                                </div>
-                                            )}
-                                        </div>
+                                        <Avatar className="w-14 h-14 rounded-full bg-zinc-100 dark:bg-zinc-800 border-4 border-white dark:border-zinc-900 shadow-md">
+                                            {service.user.avatar && <AvatarImage src={service.user.avatar} alt={service.user.name} />}
+                                            <AvatarFallback className="text-lg font-black text-primary bg-primary/10 rounded-full">
+                                                {service.user.name.charAt(0).toUpperCase()}
+                                            </AvatarFallback>
+                                        </Avatar>
                                         <div className="pt-8">
                                             <span className="text-sm font-bold text-zinc-900 dark:text-white">{service.user.name}</span>
                                         </div>
@@ -193,7 +191,7 @@ export function FeaturedServices() {
                         </motion.div>
                     ))}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

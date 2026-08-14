@@ -5,6 +5,7 @@ import { Search, MapPin, Star, Loader2, Sparkles, ArrowRight } from 'lucide-reac
 import { motion, AnimatePresence } from 'framer-motion';
 import { apiFetch } from '@/lib/api';
 import Link from 'next/link';
+import { Container } from '@nhonguista/ui';
 
 export function Hero() {
     const [search, setSearch] = useState('');
@@ -109,7 +110,7 @@ export function Hero() {
                 />
             </div>
 
-            <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+            <Container className="relative z-10 flex flex-col items-center text-center max-w-5xl">
                 {/* Badge */}
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -270,7 +271,7 @@ export function Hero() {
                         </div>
                     ))}
                 </motion.div>
-            </div>
+            </Container>
         </section>
     );
 }

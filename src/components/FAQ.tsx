@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
+import { Container } from '@nhonguista/ui';
 
 interface FAQItemProps {
     question: string;
@@ -21,16 +22,16 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
         >
             <button
                 onClick={onClick}
-                className={`w-full flex items-center justify-between py-4 px-5 sm:py-5 sm:px-6 bg-white dark:bg-zinc-900 rounded-2xl border transition-all text-left group
-                    ${isOpen ? 'border-primary/30 shadow-lg shadow-primary/5 dark:shadow-none' : 'border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md hover:border-zinc-200 dark:hover:border-zinc-700'}`}
+                className={`w-full flex items-center justify-between py-3 px-4 sm:py-4 sm:px-5 bg-white dark:bg-zinc-900 rounded-2xl border transition-all text-left group
+                    ${isOpen ? 'border-primary/30 shadow-md shadow-primary/5 dark:shadow-none' : 'border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md hover:border-zinc-200 dark:hover:border-zinc-700'}`}
             >
-                <span className={`text-lg font-bold transition-colors pr-8 ${isOpen ? 'text-primary' : 'text-zinc-900 dark:text-zinc-50 group-hover:text-primary'}`}>
+                <span className={`text-base sm:text-lg font-bold transition-colors pr-8 ${isOpen ? 'text-primary' : 'text-zinc-900 dark:text-zinc-50 group-hover:text-primary'}`}>
                     {question}
                 </span>
                 <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, type: "spring" as any, stiffness: 200 }}
-                    className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'text-primary bg-primary/10' : 'text-zinc-400 group-hover:text-primary bg-zinc-50 dark:bg-zinc-800 group-hover:bg-primary/5'}`}
+                    className={`shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'text-primary bg-primary/10' : 'text-zinc-400 group-hover:text-primary bg-zinc-50 dark:bg-zinc-800 group-hover:bg-primary/5'}`}
                 >
                     <ChevronDown className="w-5 h-5" />
                 </motion.div>
@@ -44,8 +45,8 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
                         transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                     >
-                        <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-base sm:text-lg">
-                            <div className="w-full h-px bg-zinc-100 dark:bg-zinc-800 mb-4 hidden"></div>
+                        <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-1 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+                            <div className="w-full h-px bg-zinc-100 dark:bg-zinc-800 mb-3 hidden"></div>
                             {answer}
                         </div>
                     </motion.div>
@@ -73,12 +74,12 @@ export function FAQ() {
     const rightCol = faqs.slice(midIndex);
 
     return (
-        <section className="px-6 py-32 bg-zinc-50 dark:bg-zinc-950/50 relative overflow-hidden">
+        <section className="py-32 bg-zinc-50 dark:bg-zinc-950/50 relative overflow-hidden">
             {/* Decorative background blur */}
             <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -ml-64 pointer-events-none"></div>
             
-            <div className="max-w-6xl mx-auto relative z-10">
-                <div className="text-center mb-20">
+            <Container className="relative z-10 px-6 sm:px-0">
+                <div className="text-center mb-16 sm:mb-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -108,7 +109,7 @@ export function FAQ() {
                     </motion.p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 items-start max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 items-start w-full">
                     <div>
                         {leftCol.map((faq, idx) => (
                             <FAQItem 
@@ -138,7 +139,7 @@ export function FAQ() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

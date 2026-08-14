@@ -7,10 +7,12 @@ Todas as alterações notáveis na aplicação Landing serão documentadas neste
 
 ### ✨ Adicionado
 - **Consumo de UI**: Adoção do componente `Button` da `@nhonguista/ui` na secção de CTA (`ProviderCTA`) usando a nova variante `white`.
+- **Componentes Estruturais**: Adoção do `<Container />` e `<Avatar />` vindos diretamente do pacote `@nhonguista/ui`.
 
 ### 🔄 Alterado
-- **Limites Laterais**: Uniformização do limite lateral de todo o site. Múltiplos contentores (Header, Hero, Categories, ProviderCTA, HowItWorks, FAQ, Stats) migrados para usar a restrição `max-w-6xl`, garantindo um alinhamento perfeito com o rodapé (Footer).
-- **Componente FAQ**: Emagrecimento visual dos cartões de perguntas frequentes através da redução do padding (`py-4 px-5`) e alteração dos cantos para `rounded-2xl` de forma a coincidir com os novos botões da UI.
+- **Limites Laterais**: Uniformização do limite lateral de todo o site. Todos os contentores (Header, Hero, Categories, ProviderCTA, HowItWorks, FAQ, Stats, FeaturedServices, Footer) migrados para usar o componente `<Container />` (`max-w-6xl`), garantindo um alinhamento perfeito de ponta a ponta.
+- **Componente FAQ**: Emagrecimento visual dos cartões de perguntas frequentes através da redução do padding (`py-3 px-4`) de forma a evitar um aspecto demasiado preenchido.
+- **Avatares**: Substituição de HTML fixo pelo componente `<Avatar />` oficial (circular, `rounded-full`) nas secções do Utilizador (`Header`) e Lista de Profissionais (`FeaturedServices`).
 
 ---
 
