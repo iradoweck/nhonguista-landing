@@ -21,7 +21,7 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
         >
             <button
                 onClick={onClick}
-                className={`w-full flex items-center justify-between p-6 sm:p-8 bg-white dark:bg-zinc-900 rounded-3xl border transition-all text-left group
+                className={`w-full flex items-center justify-between py-4 px-5 sm:py-5 sm:px-6 bg-white dark:bg-zinc-900 rounded-2xl border transition-all text-left group
                     ${isOpen ? 'border-primary/30 shadow-lg shadow-primary/5 dark:shadow-none' : 'border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md hover:border-zinc-200 dark:hover:border-zinc-700'}`}
             >
                 <span className={`text-lg font-bold transition-colors pr-8 ${isOpen ? 'text-primary' : 'text-zinc-900 dark:text-zinc-50 group-hover:text-primary'}`}>
@@ -44,8 +44,8 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
                         transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                     >
-                        <div className="p-6 sm:p-8 pt-0 sm:pt-0 text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
-                            <div className="w-full h-px bg-zinc-100 dark:bg-zinc-800 mb-6 hidden"></div>
+                        <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-base sm:text-lg">
+                            <div className="w-full h-px bg-zinc-100 dark:bg-zinc-800 mb-4 hidden"></div>
                             {answer}
                         </div>
                     </motion.div>
@@ -77,7 +77,7 @@ export function FAQ() {
             {/* Decorative background blur */}
             <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -ml-64 pointer-events-none"></div>
             
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -108,7 +108,7 @@ export function FAQ() {
                     </motion.p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 items-start max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 items-start max-w-6xl mx-auto">
                     <div>
                         {leftCol.map((faq, idx) => (
                             <FAQItem 

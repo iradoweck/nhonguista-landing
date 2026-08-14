@@ -3,13 +3,15 @@
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import { LogOut, User as UserIcon } from "lucide-react";
+import { Button } from "@nhonguista/ui";
 
 export function Header() {
     const { user, logout, isAuthenticated } = useAuth();
 
     return (
-        <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-zinc-100 dark:border-zinc-900">
-            <div className="flex items-center gap-2">
+        <header className="sticky top-0 z-50 flex items-center justify-center px-6 py-4 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-zinc-100 dark:border-zinc-900">
+            <div className="w-full max-w-6xl mx-auto flex items-center justify-between">
+                <div className="flex items-center gap-2">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-orange-600/20 group-hover:scale-110 transition-transform">
                         N
@@ -44,21 +46,16 @@ export function Header() {
                         </button>
                     </div>
                 ) : (
-                    <>
-                        <Link 
-                            href="/login" 
-                            className="text-sm font-bold text-zinc-900 dark:text-zinc-50 hover:text-orange-600 transition-colors"
-                        >
-                            Entrar
-                        </Link>
-                        <Link 
-                            href="/registo" 
-                            className="h-10 px-6 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-bold hover:bg-orange-600 dark:hover:bg-orange-500 hover:text-white transition-all shadow-xl shadow-zinc-900/10 dark:shadow-white/5"
-                        >
-                            Criar Conta
-                        </Link>
-                    </>
+                    <div className="flex items-center gap-3">
+                        <Button variant="ghost" size="sm" asChild>
+                            <Link href="/login">Entrar</Link>
+                        </Button>
+                        <Button size="sm" asChild>
+                            <Link href="/registo">Criar Conta</Link>
+                        </Button>
+                    </div>
                 )}
+            </div>
             </div>
         </header>
     );

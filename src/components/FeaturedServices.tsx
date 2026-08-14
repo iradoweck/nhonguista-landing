@@ -87,7 +87,7 @@ export function FeaturedServices() {
     if (loading) {
         return (
             <section className="px-6 py-24 bg-zinc-50/50 dark:bg-zinc-950">
-                <div className="max-w-7xl mx-auto w-full">
+                <div className="max-w-6xl mx-auto w-full">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
                         <div className="space-y-3">
                             <div className="h-10 w-64 bg-zinc-200 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
@@ -111,7 +111,7 @@ export function FeaturedServices() {
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full pointer-events-none blur-3xl"></div>
             
-            <div className="max-w-7xl mx-auto w-full relative z-10">
+            <div className="max-w-6xl mx-auto w-full relative z-10">
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
                     <div>
                         <h2 className="text-4xl font-black text-zinc-900 dark:text-white tracking-tight mb-2">Profissionais em Destaque</h2>

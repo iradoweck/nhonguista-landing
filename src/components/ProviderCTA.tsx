@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Star } from 'lucide-react';
+import { Button } from '@nhonguista/ui';
 
 export function ProviderCTA() {
     return (
         <section className="px-6 py-24 sm:py-32 bg-white dark:bg-black">
-            <div className="max-w-7xl mx-auto rounded-[3rem] bg-gradient-to-br from-primary via-primary to-primary-dark p-8 sm:p-20 text-white flex flex-col md:flex-row items-center gap-12 sm:gap-20 overflow-hidden relative shadow-2xl shadow-primary/20">
+            <div className="max-w-6xl mx-auto rounded-[3rem] bg-gradient-to-br from-primary via-primary to-primary-dark p-8 sm:p-20 text-white flex flex-col md:flex-row items-center gap-12 sm:gap-20 overflow-hidden relative shadow-2xl shadow-primary/20">
                 {/* Background decorative elements */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/20 rounded-full -ml-32 -mb-32 blur-3xl pointer-events-none"></div>
@@ -52,13 +53,12 @@ export function ProviderCTA() {
                         transition={{ delay: 0.3 }}
                         className="flex flex-col sm:flex-row items-center gap-4"
                     >
-                        <Link 
-                            href="/registo?role=provider" 
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-16 px-10 rounded-2xl bg-white text-primary text-lg font-black hover:bg-zinc-50 transition-all shadow-xl shadow-black/10 hover:-translate-y-1"
-                        >
-                            Quero ser Nhonguista
-                            <ArrowRight className="w-5 h-5" />
-                        </Link>
+                        <Button variant="white" size="lg" className="w-full sm:w-auto h-16 text-lg font-black" asChild>
+                            <Link href="/registo?role=provider">
+                                Quero ser Nhonguista
+                                <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </Button>
                     </motion.div>
                     
                     <motion.div 

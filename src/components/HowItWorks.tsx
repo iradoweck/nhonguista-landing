@@ -45,7 +45,7 @@ export function HowItWorks() {
             {/* Background Decorative Line */}
             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent hidden md:block opacity-50 z-0"></div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

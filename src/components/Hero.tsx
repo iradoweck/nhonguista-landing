@@ -95,7 +95,7 @@ export function Hero() {
                         y: [0, -50, 0]
                     }}
                     transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[15%] -left-[10%] w-[50%] h-[60%] rounded-full bg-primary/20 dark:bg-primary/10 blur-[100px]"
+                    className="absolute -top-[15%] -left-[10%] w-[50%] h-[60%] rounded-full bg-brand/20 dark:bg-brand/10 blur-[100px]"
                 />
                 <motion.div 
                     animate={{ 
@@ -105,7 +105,7 @@ export function Hero() {
                         y: [0, 50, 0]
                     }}
                     transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[60%] rounded-full bg-accent/20 dark:bg-accent/10 blur-[100px]"
+                    className="absolute -bottom-[20%] -right-[10%] w-[50%] h-[60%] rounded-full bg-brand/20 dark:bg-brand/10 blur-[100px]"
                 />
             </div>
 
@@ -115,7 +115,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 text-primary dark:text-primary-light font-medium text-sm shadow-sm backdrop-blur-md"
+                    className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 dark:bg-brand/20 border border-brand/20 dark:border-brand/30 text-brand dark:text-brand font-medium text-sm shadow-sm backdrop-blur-md"
                 >
                     <Sparkles className="w-4 h-4" />
                     <span>A plataforma nº1 de serviços em Nampula</span>
@@ -128,9 +128,9 @@ export function Hero() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-5xl sm:text-7xl font-black tracking-tight text-zinc-900 dark:text-white mb-6 leading-tight min-h-[2.5em] sm:min-h-[1.5em]"
                 >
-                    Encontre <span className="text-accent dark:text-accent-light relative whitespace-nowrap">
+                    Encontre <span className="text-brand dark:text-brand relative whitespace-nowrap">
                         {currentText}
-                        <span className="absolute -right-2 top-0 h-full w-[3px] bg-accent animate-pulse"></span>
+                        <span className="absolute -right-2 top-0 h-full w-[3px] bg-brand animate-pulse"></span>
                     </span><br className="hidden sm:block" /> para o seu projeto.
                 </motion.h1>
                 
@@ -153,10 +153,10 @@ export function Hero() {
                 >
                     <form 
                         onSubmit={handleSearch}
-                        className="flex flex-col sm:flex-row items-center gap-2 p-2 sm:p-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl sm:rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)] border border-white/50 dark:border-zinc-800 focus-within:ring-4 focus-within:ring-primary/20 focus-within:border-primary/50 transition-all z-20 relative"
+                        className="flex flex-col sm:flex-row items-center gap-2 p-2 sm:p-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-3xl sm:rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)] border border-white/50 dark:border-zinc-800 focus-within:ring-4 focus-within:ring-brand/20 focus-within:border-brand/50 transition-all z-20 relative"
                     >
                         <div className="flex-1 flex items-center px-4 relative h-14 w-full">
-                            <Search className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                            <Search className="w-5 h-5 text-brand mr-3 flex-shrink-0" />
                             <div className="relative flex-1 h-full overflow-hidden">
                                 <AnimatePresence mode="wait">
                                     {search === '' && (
@@ -166,7 +166,7 @@ export function Hero() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -15 }}
                                             transition={{ duration: 0.3 }}
-                                            className="absolute left-0 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none text-base sm:text-lg whitespace-nowrap"
+                                            className="absolute left-0 top-1/2 -translate-y-1/2 text-zinc-800 dark:text-zinc-200 pointer-events-none text-base sm:text-lg whitespace-nowrap"
                                         >
                                             {placeholders[placeholderIndex]}
                                         </motion.span>
@@ -180,11 +180,11 @@ export function Hero() {
                                     placeholder="Pesquisar..."
                                 />
                             </div>
-                            {loading && <Loader2 className="w-5 h-5 animate-spin text-primary ml-2 flex-shrink-0" />}
+                            {loading && <Loader2 className="w-5 h-5 animate-spin text-brand ml-2 flex-shrink-0" />}
                         </div>
                         <button 
                             type="submit"
-                            className="w-full sm:w-auto h-14 px-8 rounded-2xl sm:rounded-full bg-primary text-white font-bold text-lg hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full sm:w-auto h-14 px-8 rounded-2xl sm:rounded-full bg-brand text-white font-bold text-lg hover:bg-brand-dark hover:shadow-lg hover:shadow-brand/30 transition-all active:scale-95 flex items-center justify-center gap-2"
                         >
                             Pesquisar
                             <ArrowRight className="w-5 h-5 hidden sm:block" />
@@ -213,23 +213,23 @@ export function Hero() {
                                                     <img src={service.images?.[0] || 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=100'} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                                 </div>
                                                 <div className="flex-1 text-left">
-                                                    <h4 className="font-bold text-zinc-900 dark:text-zinc-50 group-hover:text-primary transition-colors text-lg">{service.title}</h4>
+                                                    <h4 className="font-bold text-zinc-900 dark:text-zinc-50 group-hover:text-brand transition-colors text-lg">{service.title}</h4>
                                                     <div className="flex items-center gap-2 text-sm text-zinc-500 mt-1">
                                                         <MapPin className="w-3.5 h-3.5" />
                                                         <span>{service.location?.name || 'Nampula'}</span>
                                                         <span className="text-zinc-300">•</span>
-                                                        <Star className="w-3.5 h-3.5 fill-accent text-accent" />
+                                                        <Star className="w-3.5 h-3.5 fill-brand text-brand" />
                                                         <span className="font-bold text-zinc-700 dark:text-zinc-300">5.0</span>
                                                     </div>
                                                 </div>
-                                                <div className="text-base font-black text-primary px-4 py-2 bg-primary/5 dark:bg-primary/10 rounded-xl">
+                                                <div className="text-base font-black text-brand px-4 py-2 bg-brand/5 dark:bg-brand/10 rounded-xl">
                                                     MZN {service.price_min}
                                                 </div>
                                             </Link>
                                         ))}
                                         <Link 
                                             href={`/servicos?search=${encodeURIComponent(search)}`}
-                                            className="block w-full p-4 mt-2 text-center text-sm font-bold text-primary hover:bg-primary/5 transition-colors rounded-xl border border-transparent hover:border-primary/10"
+                                            className="block w-full p-4 mt-2 text-center text-sm font-bold text-brand hover:bg-brand/5 transition-colors rounded-xl border border-transparent hover:border-brand/10"
                                         >
                                             Ver todos os resultados para "{search}" <ArrowRight className="inline-block w-4 h-4 ml-1 -mt-0.5" />
                                         </Link>
@@ -244,7 +244,7 @@ export function Hero() {
                                     </div>
                                 ) : (
                                     <div className="p-12 flex justify-center">
-                                        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                                        <Loader2 className="w-8 h-8 animate-spin text-brand" />
                                     </div>
                                 )}
                             </motion.div>
@@ -264,7 +264,7 @@ export function Hero() {
                         { text: "Nampula-first", icon: "📍" },
                         { text: "Contacto Directo", icon: "💬" }
                     ].map((feature, i) => (
-                        <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 text-sm font-medium text-zinc-600 dark:text-zinc-400 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default">
+                        <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 dark:bg-zinc-50 border border-zinc-800 dark:border-zinc-200 text-sm font-bold text-white dark:text-zinc-900 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default">
                             <span>{feature.icon}</span>
                             {feature.text}
                         </div>

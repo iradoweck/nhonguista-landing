@@ -1,5 +1,18 @@
-# Changelog - Landing Page
+# Changelog - Landing App (Nhonguista)
 
+Todas as alterações notáveis na aplicação Landing serão documentadas neste ficheiro.
+
+## [0.0.3] - 14 Ago 2026
+> **Foco:** Refinamento Visual e Alinhamento Estrutural.
+
+### ✨ Adicionado
+- **Consumo de UI**: Adoção do componente `Button` da `@nhonguista/ui` na secção de CTA (`ProviderCTA`) usando a nova variante `white`.
+
+### 🔄 Alterado
+- **Limites Laterais**: Uniformização do limite lateral de todo o site. Múltiplos contentores (Header, Hero, Categories, ProviderCTA, HowItWorks, FAQ, Stats) migrados para usar a restrição `max-w-6xl`, garantindo um alinhamento perfeito com o rodapé (Footer).
+- **Componente FAQ**: Emagrecimento visual dos cartões de perguntas frequentes através da redução do padding (`py-4 px-5`) e alteração dos cantos para `rounded-2xl` de forma a coincidir com os novos botões da UI.
+
+---
 
 ## [0.0.2] - 12 Ago 2026
 > **Foco:** Integração de Workspaces e Governança de IA.
@@ -22,6 +35,8 @@
 ### 🔄 Alterado
 - **Workspaces & Integração**: Integração nativa com pacotes locais usando `workspace:*` (incluindo `moz-utils` e pacotes internos).
 - **Documentação**: Atualização do `README.md` com secção explícita para licenciamento sob Apache License 2.0.
+
+---
 
 ## [0.0.1] - 13 Mai 2026
 > **Foco:** Experiência "Viva" (UX/UI), Localização e Estatísticas.

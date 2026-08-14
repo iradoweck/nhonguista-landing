@@ -59,7 +59,7 @@ export function Categories() {
 
     if (loading) {
         return (
-            <section className="px-6 py-24 max-w-7xl mx-auto w-full">
+            <section className="px-6 py-24 max-w-6xl mx-auto w-full">
                 <div className="flex items-center justify-between mb-12">
                     <div className="h-10 w-48 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
                     <div className="h-6 w-24 bg-zinc-100 dark:bg-zinc-800 rounded-lg animate-pulse"></div>
@@ -74,7 +74,7 @@ export function Categories() {
     }
 
     return (
-        <section className="px-6 py-24 max-w-7xl mx-auto w-full">
+        <section className="px-6 py-24 max-w-6xl mx-auto w-full">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
                 <div>
                     <h2 className="text-4xl font-black text-zinc-900 dark:text-white tracking-tight mb-2">Explorar Categorias</h2>
@@ -82,7 +82,7 @@ export function Categories() {
                 </div>
                 <Link 
                     href="/servicos" 
-                    className="group flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors"
+                    className="group flex items-center gap-2 text-brand font-bold hover:text-brand-dark transition-colors"
                 >
                     Ver todas as categorias
                     <Icons.ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -100,20 +100,20 @@ export function Categories() {
                     const IconComponent = (Icons as any)[cat.icon] || Icons.LayoutGrid;
                     
                     // Alternate colors for visual interest
-                    const isAccent = index % 3 === 0;
+                    const isBrand = index % 3 === 0;
                     
                     return (
                         <motion.div key={cat.id} variants={itemVariants}>
                             <Link 
                                 href={`/servicos?category=${cat.slug}`}
-                                className={`group relative overflow-hidden flex flex-col items-center justify-center p-8 sm:p-10 bg-white dark:bg-zinc-900/40 backdrop-blur-sm rounded-3xl border border-zinc-100 dark:border-zinc-800 transition-all duration-300 hover:-translate-y-2 ${isAccent ? 'hover:shadow-[0_20px_40px_-15px_rgba(253,67,0,0.2)] dark:hover:shadow-[0_20px_40px_-15px_rgba(253,67,0,0.3)] hover:border-accent/30' : 'hover:shadow-[0_20px_40px_-15px_rgba(0,102,220,0.2)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,102,220,0.3)] hover:border-primary/30'}`}
+                                className="group relative overflow-hidden flex flex-col items-center justify-center p-8 sm:p-10 bg-white dark:bg-zinc-900/40 backdrop-blur-sm rounded-3xl border border-zinc-100 dark:border-zinc-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(253,67,0,0.2)] dark:hover:shadow-[0_20px_40px_-15px_rgba(253,67,0,0.3)] hover:border-brand/30"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 
-                                <div className={`relative z-10 p-5 rounded-2xl mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${isAccent ? 'bg-accent/10 text-accent dark:bg-accent/20' : 'bg-primary/10 text-primary dark:bg-primary/20'}`}>
+                                <div className="relative z-10 p-5 rounded-2xl mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 bg-brand/10 text-brand dark:bg-brand/20">
                                     <IconComponent className="w-8 h-8 sm:w-10 sm:h-10" strokeWidth={1.5} />
                                 </div>
-                                <span className="relative z-10 font-bold text-lg text-zinc-900 dark:text-zinc-100 text-center group-hover:text-primary transition-colors">
+                                <span className="relative z-10 font-bold text-lg text-zinc-900 dark:text-zinc-100 text-center group-hover:text-brand transition-colors">
                                     {cat.name}
                                 </span>
                             </Link>

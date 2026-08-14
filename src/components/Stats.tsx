@@ -88,7 +88,7 @@ export function Stats() {
         <section className="px-6 py-20 bg-zinc-50/50 dark:bg-zinc-950/50 border-y border-zinc-100 dark:border-zinc-900 relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full bg-[radial-gradient(ellipse_at_top,rgba(0,102,220,0.05),transparent_70%)] pointer-events-none"></div>
             
-            <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-16 hidden md:block">
                     <h2 className="text-sm font-black tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">O Nosso Impacto</h2>
                     <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">A crescer todos os dias na comunidade.</p>
