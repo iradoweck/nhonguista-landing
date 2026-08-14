@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Star, MapPin, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { apiFetch } from '@/lib/api';
-import { Container, Avatar, AvatarFallback, AvatarImage } from '@nhonguista/ui';
+import { Container, Avatar, AvatarFallback, AvatarImage, Badge } from '@nhonguista/ui';
 
 interface Service {
     id: string;
@@ -147,9 +147,9 @@ export function FeaturedServices() {
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                                    <div className="absolute top-4 left-4 px-4 py-1.5 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-full text-xs font-black text-primary uppercase tracking-wider shadow-lg">
+                                    <Badge className="absolute top-4 left-4 shadow-lg bg-white/90 dark:bg-black/80 text-primary hover:bg-white/100 dark:hover:bg-black uppercase tracking-wider font-black backdrop-blur-md border-transparent px-3 py-1">
                                         {service.category.name}
-                                    </div>
+                                    </Badge>
                                     <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/80 backdrop-blur-md rounded-full text-white shadow-lg">
                                         <Star className="w-3.5 h-3.5 fill-accent text-accent" />
                                         <span className="text-xs font-bold">{(service.average_rating || 5.0).toFixed(1)}</span>
