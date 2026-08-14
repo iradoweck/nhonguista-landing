@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
 
 interface FAQItemProps {
     question: string;
@@ -13,18 +13,24 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
     return (
-        <div className="mb-4">
+        <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-4"
+        >
             <button
                 onClick={onClick}
-                className="w-full flex items-center justify-between p-6 bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all text-left group"
+                className={`w-full flex items-center justify-between p-6 sm:p-8 bg-white dark:bg-zinc-900 rounded-3xl border transition-all text-left group
+                    ${isOpen ? 'border-primary/30 shadow-lg shadow-primary/5 dark:shadow-none' : 'border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-md hover:border-zinc-200 dark:hover:border-zinc-700'}`}
             >
-                <span className="font-bold text-zinc-900 dark:text-zinc-50 group-hover:text-orange-600 transition-colors">
+                <span className={`text-lg font-bold transition-colors pr-8 ${isOpen ? 'text-primary' : 'text-zinc-900 dark:text-zinc-50 group-hover:text-primary'}`}>
                     {question}
                 </span>
                 <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-zinc-400 group-hover:text-orange-600"
+                    transition={{ duration: 0.3, type: "spring" as any, stiffness: 200 }}
+                    className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'text-primary bg-primary/10' : 'text-zinc-400 group-hover:text-primary bg-zinc-50 dark:bg-zinc-800 group-hover:bg-primary/5'}`}
                 >
                     <ChevronDown className="w-5 h-5" />
                 </motion.div>
@@ -35,21 +41,22 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                     >
-                        <div className="p-6 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                        <div className="p-6 sm:p-8 pt-0 sm:pt-0 text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
+                            <div className="w-full h-px bg-zinc-100 dark:bg-zinc-800 mb-6 hidden"></div>
                             {answer}
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+        </motion.div>
     );
 }
 
 export function FAQ() {
-    const [openLeft, setOpenLeft] = useState<number | null>(null);
+    const [openLeft, setOpenLeft] = useState<number | null>(0);
     const [openRight, setOpenRight] = useState<number | null>(null);
 
     const faqs = [
@@ -66,14 +73,42 @@ export function FAQ() {
     const rightCol = faqs.slice(midIndex);
 
     return (
-        <section className="px-6 py-24 bg-zinc-50 dark:bg-zinc-900/30">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Perguntas Frequentes</h2>
-                    <p className="text-zinc-500 dark:text-zinc-400">Tudo o que precisa de saber para começar a usar a maior plataforma de Nampula.</p>
+        <section className="px-6 py-32 bg-zinc-50 dark:bg-zinc-950/50 relative overflow-hidden">
+            {/* Decorative background blur */}
+            <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -ml-64 pointer-events-none"></div>
+            
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="w-16 h-16 mx-auto bg-primary/10 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary"
+                    >
+                        <MessageCircleQuestion className="w-8 h-8" />
+                    </motion.div>
+                    
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl sm:text-5xl font-black text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight"
+                    >
+                        Perguntas Frequentes
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto"
+                    >
+                        Tudo o que precisa de saber para começar a usar a maior plataforma de serviços de Nampula.
+                    </motion.p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 items-start max-w-5xl mx-auto">
                     <div>
                         {leftCol.map((faq, idx) => (
                             <FAQItem 
@@ -81,7 +116,10 @@ export function FAQ() {
                                 question={faq.q} 
                                 answer={faq.a} 
                                 isOpen={openLeft === idx}
-                                onClick={() => setOpenLeft(openLeft === idx ? null : idx)}
+                                onClick={() => {
+                                    setOpenLeft(openLeft === idx ? null : idx);
+                                    if (openLeft !== idx) setOpenRight(null); // Optional: close right side when opening left
+                                }}
                             />
                         ))}
                     </div>
@@ -92,7 +130,10 @@ export function FAQ() {
                                 question={faq.q} 
                                 answer={faq.a} 
                                 isOpen={openRight === idx}
-                                onClick={() => setOpenRight(openRight === idx ? null : idx)}
+                                onClick={() => {
+                                    setOpenRight(openRight === idx ? null : idx);
+                                    if (openRight !== idx) setOpenLeft(null); // Optional: close left side when opening right
+                                }}
                             />
                         ))}
                     </div>

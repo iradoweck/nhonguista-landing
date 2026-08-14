@@ -7,7 +7,9 @@ import { useAuth } from '@/contexts/AuthContext';
 import { UserPlus, ArrowLeft, Loader2, User, HardHat } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export default function RegisterPage() {
+import { Suspense } from 'react';
+
+function RegisterForm() {
     const searchParams = useSearchParams();
     const defaultRole = searchParams.get('role') || 'client';
 
@@ -189,5 +191,17 @@ export default function RegisterPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function RegisterPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 items-center">
+                <Loader2 className="w-8 h-8 animate-spin text-orange-600" />
+            </div>
+        }>
+            <RegisterForm />
+        </Suspense>
     );
 }
