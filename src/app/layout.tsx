@@ -31,6 +31,8 @@ export const metadata: Metadata = {
 
 import { AuthProvider } from "@/contexts/AuthContext";
 
+import { Toaster, TooltipProvider } from "@nhonguista/ui";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,8 +45,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <AuthProvider>
-          {children}
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
         </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );
