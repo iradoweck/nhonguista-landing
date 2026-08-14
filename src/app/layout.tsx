@@ -30,7 +30,6 @@ export const metadata: Metadata = {
 };
 
 import { AuthProvider } from "@/contexts/AuthContext";
-
 import { Toaster, TooltipProvider } from "@nhonguista/ui";
 
 export default function RootLayout({

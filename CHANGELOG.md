@@ -6,10 +6,14 @@ Todas as alterações notáveis na aplicação Landing serão documentadas neste
 > **Foco:** Refinamento Visual e Alinhamento Estrutural.
 
 ### ✨ Adicionado
+- **Página de Prestadores**: Criação de uma nova página dedicada (`/prestadores`) para visualizar e pesquisar profissionais.
+- **Componente Directory**: Implementação do componente de listagem, com funcionalidades de pesquisa por nome e filtro por categorias.
+- **ServiceCard**: Novo componente visual para apresentar o perfil dos prestadores, consumindo os primitivos da `@nhonguista/ui`.
 - **Consumo de UI**: Adoção do componente `Button` da `@nhonguista/ui` na secção de CTA (`ProviderCTA`) usando a nova variante `white`.
 - **Componentes Estruturais**: Adoção do `<Container />` e `<Avatar />` vindos diretamente do pacote `@nhonguista/ui`.
 
 ### 🔄 Alterado
+- **Navegação**: O link "Explorar Serviços" do cabeçalho foi alterado para "Prestadores", reencaminhando os utilizadores para o novo Diretório dedicado.
 - **Limites Laterais**: Uniformização do limite lateral de todo o site. Todos os contentores (Header, Hero, Categories, ProviderCTA, HowItWorks, FAQ, Stats, FeaturedServices, Footer) migrados para usar o componente `<Container />` (`max-w-6xl`), garantindo um alinhamento perfeito de ponta a ponta.
 - **Componente FAQ**: Emagrecimento visual dos cartões de perguntas frequentes através da redução do padding (`py-3 px-4`) de forma a evitar um aspecto demasiado preenchido.
 - **Avatares**: Substituição de HTML fixo pelo componente `<Avatar />` oficial (circular, `rounded-full`) nas secções do Utilizador (`Header`) e Lista de Profissionais (`FeaturedServices`).

@@ -36,7 +36,7 @@ export function Header() {
             
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
-                    <Link href="/servicos" className="hover:text-orange-600 transition-colors">Explorar</Link>
+                    <Link href="/prestadores" className="hover:text-orange-600 transition-colors">Prestadores</Link>
                     <Link href="#como-funciona" className="hover:text-orange-600 transition-colors">Como Funciona</Link>
                     <Link href="/sobre" className="hover:text-orange-600 transition-colors">Sobre</Link>
                 </nav>
@@ -92,7 +92,7 @@ export function Header() {
                                 
                                 <div className="flex flex-col h-full mt-6">
                                     <nav className="flex flex-col gap-6 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                                        <Link href="/servicos" onClick={() => setOpen(false)} className="hover:text-orange-600 transition-colors">Explorar Serviços</Link>
+                                        <Link href="/prestadores" onClick={() => setOpen(false)} className="hover:text-orange-600 transition-colors">Prestadores</Link>
                                         <Link href="#como-funciona" onClick={() => setOpen(false)} className="hover:text-orange-600 transition-colors">Como Funciona</Link>
                                         <Link href="/sobre" onClick={() => setOpen(false)} className="hover:text-orange-600 transition-colors">Sobre a Nhonguista</Link>
                                     </nav>
