@@ -68,10 +68,10 @@ export function Header() {
                         ) : (
                             <div className="flex items-center gap-3">
                                 <Button variant="ghost" size="sm" asChild>
-                                    <Link href="/login">Entrar</Link>
+                                    <Link href={process.env.NEXT_PUBLIC_CORE_URL ? `${process.env.NEXT_PUBLIC_CORE_URL}/login` : "http://localhost:3000/login"}>Entrar</Link>
                                 </Button>
                                 <Button size="sm" asChild>
-                                    <Link href="/registo">Criar Conta</Link>
+                                    <Link href={process.env.NEXT_PUBLIC_CORE_URL ? `${process.env.NEXT_PUBLIC_CORE_URL}/registo` : "http://localhost:3000/registo"}>Criar Conta</Link>
                                 </Button>
                             </div>
                         )}
@@ -124,10 +124,10 @@ export function Header() {
                                         ) : (
                                             <div className="flex flex-col gap-3">
                                                 <Button variant="outline" className="w-full" asChild onClick={() => setOpen(false)}>
-                                                    <Link href="/login">Entrar</Link>
+                                                    <Link href={process.env.NEXT_PUBLIC_CORE_URL ? `${process.env.NEXT_PUBLIC_CORE_URL}/login` : "http://localhost:3000/login"}>Entrar</Link>
                                                 </Button>
                                                 <Button className="w-full" asChild onClick={() => setOpen(false)}>
-                                                    <Link href="/registo">Criar Conta</Link>
+                                                    <Link href={process.env.NEXT_PUBLIC_CORE_URL ? `${process.env.NEXT_PUBLIC_CORE_URL}/registo` : "http://localhost:3000/registo"}>Criar Conta</Link>
                                                 </Button>
                                             </div>
                                         )}
